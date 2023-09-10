@@ -25,6 +25,12 @@ class Mammal extends Animal
     return $this->isWarmBlooded;
   }
 
+  public function setIsWarmBlooded($isWarmBlooded)
+  {
+    $this->isWarmBlooded = $isWarmBlooded;
+  }
+
+
   protected function milk()
   {
     echo "A {$this->species} can produce milk for its offspring";
@@ -43,6 +49,11 @@ class Bird extends Animal
   public function getHasBeak()
   {
     return $this->hasBeak;
+  }
+
+  public function setHasBeak($hasBeak)
+  {
+    $this->hasBeak = $hasBeak;
   }
 
   protected function eggs()
@@ -65,6 +76,7 @@ echo $animal1->describe() . "<br>";
 $mammal1 = new Mammal;
 $mammal1->species = 'Bear';
 $mammal1->color = 'Brown, black or white';
+$mammal1->setIsWarmBlooded(true);
 if ($mammal1->getIsWarmBlooded()) {
   echo $mammal1->describe() . " and is warm-blooded. <br>";
 }
@@ -75,6 +87,7 @@ echo $mammal1->describe() . "<br>";
 $bird1 = new Bird;
 $bird1->species = 'Flamingo';
 $bird1->color = 'Pink';
+$bird1->setHasBeak(true);
 if ($bird1->getHasBeak()) {
   echo $bird1->describe() . " and has a beak. <br>";
 }
