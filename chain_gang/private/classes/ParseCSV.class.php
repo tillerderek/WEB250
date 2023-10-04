@@ -50,7 +50,7 @@ class ParseCSV {
     fclose($file);
     return $this->data;
   }
-//this function returns the header of the csv file.
+//this function returns the last results of the parsed csv file. 
   public function last_results() {
     return $this->data;
   }
