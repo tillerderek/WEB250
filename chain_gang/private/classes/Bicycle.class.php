@@ -17,6 +17,7 @@ class Bicycle {
 
   public const GENDERS = ['Mens', 'Womens', 'Unisex'];
 
+  //this is a constant array that is used to set the condition of the bike. It is used in the condition() method below. The purpose of this is to make it easier to change the condition of the bike. If you wanted to add a new condition, you could just add it to the array below and it would be added to the condition() method.
   protected const CONDITION_OPTIONS = [
     1 => 'Beat up',
     2 => 'Decent',
@@ -63,6 +64,7 @@ class Bicycle {
     $this->weight_kg = floatval($value) / 2.2046226218;
   }
 
+  //this function is 
   public function condition() {
     if($this->condition_id > 0) {
       return self::CONDITION_OPTIONS[$this->condition_id];

@@ -1,7 +1,7 @@
 <?php
 
 class ParseCSV {
-
+  // the delimiter property is set equal to a comma that will seperate values in the csv file.
   public static $delimiter = ',';
 
   private $filename;
@@ -14,7 +14,7 @@ class ParseCSV {
       $this->file($filename);
     }
   }
-
+  //this function checks to see if the file exists and if it is readable. If it is not readable, it will return false. If it is readable, it will return true.
   public function file($filename) {
     if(!file_exists($filename)) {
       echo "File does not exist.";
@@ -26,7 +26,7 @@ class ParseCSV {
     $this->filename = $filename;
     return true;
   }
-
+//this function parses the csv file and returns the data in an array. It also counts the number of rows in the csv file.
   public function parse() {
     if(!isset($this->filename)) {
       echo "File not set.";
@@ -50,15 +50,15 @@ class ParseCSV {
     fclose($file);
     return $this->data;
   }
-
+//this function returns the header of the csv file.
   public function last_results() {
     return $this->data;
   }
-
+//this function returns the number of rows in the csv file.
   public function row_count() {
     return $this->row_count;
   }
-
+//this function resets the header and data properties to NULL and the row_count property to 0.
   private function reset() {
     $this->header = NULL;
     $this->data = [];
