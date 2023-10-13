@@ -51,7 +51,6 @@ include(SHARED_PATH . '/public_header.php');
       </td>
     </tr>
 
-    ?>
 
   <?php } ?>
 
