@@ -20,6 +20,8 @@ header,
 h1,
 h2,
 p,
+ul,
+li,
 footer {
   width: 40%;
   text-align: center;
