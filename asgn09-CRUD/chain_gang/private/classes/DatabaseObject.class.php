@@ -1,13 +1,13 @@
 <?php
 
+//vs code errors on undefined props for id and something else no big deal tho bc those are defined in child classes. DONT try and define them in superclass as empty or they will break in child class when obj is instantiated //
+
 class DatabaseObject {
 
   static protected $database;
   static protected $table_name = "";
   static protected $columns = [];
   public $errors = [];
-  public $id = 0;
-  public $db_columns = [];
 
   static public function set_database($database) {
     self::$database = $database;
