@@ -30,7 +30,7 @@
   // Load class definitions manually
 
   // -> Individually
-  // require_once('classes/bicycle.class.php');
+  // require_once('classes/bird.class.php');
 
   // -> All classes in directory
   foreach(glob('classes/*.class.php') as $file) {
@@ -46,6 +46,6 @@
   spl_autoload_register('my_autoload');
 
   $database = db_connect();
-  Bicycle::set_database($database);
+  Bird::set_database($database);
   
 ?>

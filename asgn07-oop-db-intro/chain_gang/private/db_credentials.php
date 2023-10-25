@@ -7,7 +7,7 @@
 
 define("DB_SERVER", "db");
 define("DB_USER", "webuser");
-define("DB_PASS", "secretpassword");
+define("DB_PASS", "EIfj89cq!jffds113");
 define("DB_NAME", "chain_gang");
 
 ?>

@@ -1,0 +1,41 @@
+DOCKER SQL DUMP:: First, check and copy the container ID for your MySQL docker by:
+
+sudo docker ps
+
+Copy the SQL dump file into your container using:
+
+sudo docker cp  /path/to/sql/file.sql MysqlDockerID:/
+
+This will copy the dump file into the docker root folder if you want to copy the file inside any other directory/path inside docker replace the '/' after 'MysqlDockerID:' with the path you want appropriate one.
+
+Now to interact with MySQL inside a running container run the following command:
+
+sudo docker exec -it MysqlDockerID bin/bash
+
+Now connect to the MySQL using the terminal by:
+
+mysql -u yourUserName -p
+
+This will now ask you for the password. Enter the correct password to proceed.
+
+List the databases available by:
+
+show Databases;
+
+This will list out the available databases
+
+Assuming your database name where you want to import dump to is 'MyDatabase'. Switch to that using:
+
+use MyDatabase
+
+Now you can import the file by typing:
+
+source file.sql
+
+Remember the above command works if you have copied your file into your root folder (using step 2). If you have copied it to any other path make sure you use that same path instead
+
+
+
+
+
+////////////All this code still running on CSV parser, need to go in and swap to SQL ////////////////
