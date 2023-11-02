@@ -6,7 +6,7 @@
 // 3. Unique credentials if working with multiple developers
 
 // localhost
-define("DB_SERVER", "localhost");
+define("DB_SERVER", "db");
 define("DB_USER", "sabirdsUser");
 define("DB_PASS", "cassowary");
 define("DB_NAME", "sabirds");
