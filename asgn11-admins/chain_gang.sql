@@ -10,7 +10,7 @@ CREATE TABLE `admins` (
   KEY `index_username` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
-INSERT INTO `admins` VALUES (1,'Derek','Tiller','derek@example.com','dtiller','$2y$10$74202tWuILkLIEKyAUKR/ejEmtXUjwIV3XWlWz.BeRpSgOtZAC0FS');
+INSERT INTO `admins` VALUES (1,'Derek','Tiller','derek@somewhere.com','dtiller','$2a$12$LIcIXCQZRxrwy0Ui9NJpJeelS3fEHA/2iinzMYohtmicoNvGIEiJu');
 
 DROP TABLE IF EXISTS `bicycles`;
 CREATE TABLE `bicycles` (
