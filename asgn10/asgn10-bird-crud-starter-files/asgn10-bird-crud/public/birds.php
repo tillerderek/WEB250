@@ -7,7 +7,7 @@
 <h2>Bird inventory</h2>
 <p>This is a short list -- start your birding!</p>
 
-// Create a link to Add a Bird
+<a href="new.php">Add a bird</a>
 
     <table border="1">
       <tr>
