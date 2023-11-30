@@ -31,9 +31,6 @@ class Session {
     unset($_SESSION['member_id']);
     unset($_SESSION['username']);
     unset($_SESSION['last_login']);
-    unset($this->member_id);
-    unset($this->username);
-    unset($this->last_login);
     return true;
   }
 
