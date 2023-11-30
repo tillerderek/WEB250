@@ -1,16 +1,17 @@
 <?php require_once('../../private/initialize.php'); ?>
+<?php require_login(); ?>
+<?php include(SHARED_PATH . '/public_header.php'); ?>
 
 
 <?php
 
 $id = $_GET['id'] ?? '1'; // PHP > 7.0
 
-$member = members::find_by_id($id);
+$member = Members::find_by_id($id);
 
 ?>
 
 <?php $page_title = 'Show member: ' . h($member->full_name()); ?>
-<?php include(SHARED_PATH . '/public_header.php'); ?>
 
 <div id="content">
 
@@ -18,7 +19,7 @@ $member = members::find_by_id($id);
 
   <div class="member show">
 
-    <h1>member: <?php echo h($member->full_name()); ?></h1>
+    <h1>Member: <?php echo h($member->full_name()); ?></h1>
 
     <div class="attributes">
       <dl>
@@ -36,6 +37,10 @@ $member = members::find_by_id($id);
       <dl>
         <dt>Username</dt>
         <dd><?php echo h($member->username); ?></dd>
+      </dl>
+      <dl>
+        <dt>User level</dt>
+        <dd><?php echo h($member->user_level); ?></dd>
       </dl>
     </div>
 

@@ -3,24 +3,26 @@
 require_once('../../private/initialize.php');
 
 require_login();
+include(SHARED_PATH . '/public_header.php');
 
-if(!isset($_GET['id'])) {
+
+if (!isset($_GET['id'])) {
   redirect_to(url_for('/members/index.php'));
 }
 $id = $_GET['id'];
-$member = members::find_by_id($id);
-if($member == false) {
+$member = Members::find_by_id($id);
+if ($member == false) {
   redirect_to(url_for('/members/index.php'));
 }
 
-if(is_post_request()) {
+if (is_post_request()) {
 
   // Save record using post parameters
   $args = $_POST['member'];
   $member->merge_attributes($args);
   $result = $member->save();
 
-  if($result === true) {
+  if ($result === true) {
     $session->message('The member was updated successfully.');
     redirect_to(url_for('/members/show.php?id=' . $id));
   } else {
@@ -36,7 +38,6 @@ if(is_post_request()) {
 ?>
 
 <?php $page_title = 'Edit member'; ?>
-<?php include(SHARED_PATH . '/public_header.php'); ?>
 
 <div id="content">
 
@@ -59,5 +60,4 @@ if(is_post_request()) {
   </div>
 
 </div>
-
 <?php include(SHARED_PATH . '/public_footer.php'); ?>

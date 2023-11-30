@@ -4,16 +4,23 @@ require_once('../../private/initialize.php');
 
 require_login();
 
-if(!isset($_GET['id'])) {
+include(SHARED_PATH . '/public_header.php');
+
+/* 
+  Use the bicycles/staff/delete.php file as a guide 
+  so your file mimics the same functionality.
+*/
+
+if (!isset($_GET['id'])) {
   redirect_to(url_for('/members/index.php'));
 }
 $id = $_GET['id'];
-$member = members::find_by_id($id);
-if($member == false) {
+$member = Members::find_by_id($id);
+if ($member == false) {
   redirect_to(url_for('/members/index.php'));
 }
 
-if(is_post_request()) {
+if (is_post_request()) {
 
   // Delete member
   $result = $member->delete();
@@ -27,7 +34,6 @@ if(is_post_request()) {
 ?>
 
 <?php $page_title = 'Delete member'; ?>
-<?php include(SHARED_PATH . '/public_header.php'); ?>
 
 <div id="content">
 
@@ -36,7 +42,9 @@ if(is_post_request()) {
   <div class="member delete">
     <h1>Delete member</h1>
     <p>Are you sure you want to delete this member?</p>
-    <p class="item"><?php echo h($member->full_name()); ?></p>
+    <p class="item">
+      <?php echo h($member->full_name()); ?>
+    </p>
 
     <form action="<?php echo url_for('/members/delete.php?id=' . h(u($id))); ?>" method="post">
       <div id="operations">
@@ -46,5 +54,4 @@ if(is_post_request()) {
   </div>
 
 </div>
-
 <?php include(SHARED_PATH . '/public_footer.php'); ?>

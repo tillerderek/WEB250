@@ -4,7 +4,6 @@ require_once('../../private/initialize.php');
 $errors = [];
 $username = '';
 $password = '';
-$session = new Session;
 
 if(is_post_request()) {
 
@@ -21,7 +20,7 @@ if(is_post_request()) {
 
   // if there were no errors, try to login
   if(empty($errors)) {
-    $member = members::find_by_username($username);
+    $member = Members::find_by_username($username);
     // test if member found and password is correct
     if($member != false && $member->verify_password($password)) {
       // Mark member as logged in

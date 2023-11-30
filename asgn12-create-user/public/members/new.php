@@ -1,14 +1,15 @@
 <?php
 
 require_once('../../private/initialize.php');
-
 require_login();
+
+include(SHARED_PATH . '/public_header.php');
 
 if(is_post_request()) {
 
   // Create record using post parameters
   $args = $_POST['member'];
-  $member = new members($args);
+  $member = new Members($args);
   $result = $member->save();
 
   if($result === true) {
@@ -21,20 +22,19 @@ if(is_post_request()) {
 
 } else {
   // display the form
-  $member = new members;
+  $member = new Members;
 }
 
 ?>
 
-<?php $page_title = 'Create member'; ?>
-<?php include(SHARED_PATH . '/public_header.php'); ?>
+<?php $page_title = 'Create Member'; ?>
 
 <div id="content">
 
   <a class="back-link" href="<?php echo url_for('/members/index.php'); ?>">&laquo; Back to List</a>
 
   <div class="member new">
-    <h1>Create member</h1>
+    <h1>Create Member</h1>
 
     <?php echo display_errors($member->errors); ?>
 
@@ -43,7 +43,7 @@ if(is_post_request()) {
       <?php include('form_fields.php'); ?>
 
       <div id="operations">
-        <input type="submit" value="Create member" />
+        <input type="submit" value="Create Member" />
       </div>
     </form>
 

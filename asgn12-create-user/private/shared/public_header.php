@@ -15,3 +15,13 @@
         </a>
       </h1>
     </header>
+
+    <nav>
+      <ul>
+        <?php if($session->is_logged_in()) { ?>
+          <li>User: <?php echo $session->username; ?></li>
+          <li><a href="<?php echo url_for('/members/index.php'); ?>">Members</a></li>
+          <li><a href="<?php echo url_for('/members/logout.php'); ?>">Logout</a></li>
+        <?php } ?>
+      </ul>
+    </nav>
