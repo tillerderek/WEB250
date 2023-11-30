@@ -28,9 +28,9 @@ class Session {
   }
 
   public function logout() {
-    unset($SESSION['member_id']);
-    unset($SESSION['username']);
-    unset($SESSION['last_login']);
+    unset($_SESSION['member_id']);
+    unset($_SESSION['username']);
+    unset($_SESSION['last_login']);
     unset($this->member_id);
     unset($this->username);
     unset($this->last_login);
