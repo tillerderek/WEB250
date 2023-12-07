@@ -25,8 +25,11 @@ if(is_post_request()) {
     if($member != false && $member->verify_password($password)) {
       // Mark member as logged in
       $session->login($member);
-      $member->user_level == 'a' ? redirect_to(url_for('/members/index.php')) :
-      redirect_to(url_for('index.php'));
+      if ($member->$user_level === 'a') {
+        redirect_to(url_for('/members/index.php'));
+      } else {
+        redirect_to(url_for('index.php'));
+      }
     } else {
       // username not found or password does not match
       $errors[] = "Log in was unsuccessful.";

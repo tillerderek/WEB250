@@ -2,17 +2,11 @@
 
 function require_login()
 {
-  global $session;
+    global $session;
 
-  if (!$session->is_logged_in()) {
-    redirect_to(url_for('/members/login.php'));
-  }
-    elseif($session->is_admin()) {
-      redirect_to(url_for('/members/index.php'));
-  }
-   else {
-    // Do nothing, let the rest of the page proceed
-  }
+    if (!$session->is_logged_in() || !$session->is_admin()) {
+        redirect_to(url_for('/members/login.php'));
+    }
 }
 
 

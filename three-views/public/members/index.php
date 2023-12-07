@@ -15,7 +15,7 @@ $members = Members::find_all();
 
 <div id="content">
   <div class="members listing">
-    <h1>Members</h1>
+    <h1>Members Area</h1>
 
     <div class="actions">
       <a class="action" href="<?php echo url_for('/members/new.php'); ?>">Add Member</a>
