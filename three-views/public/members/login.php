@@ -25,7 +25,7 @@ if(is_post_request()) {
     if($member != false && $member->verify_password($password)) {
       // Mark member as logged in
       $session->login($member);
-      if ($member->$user_level === 'a') {
+      if ($session->is_admin()) {
         redirect_to(url_for('/members/index.php'));
       } else {
         redirect_to(url_for('index.php'));

@@ -4,8 +4,10 @@ function require_login()
 {
     global $session;
 
-    if (!$session->is_logged_in() || !$session->is_admin()) {
+    if (!$session->is_logged_in()) {
         redirect_to(url_for('/members/login.php'));
+    } else if (!$session->is_admin()) {
+      redirect_to(url_for('/index.php'));
     }
 }
 

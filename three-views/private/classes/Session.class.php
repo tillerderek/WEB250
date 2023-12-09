@@ -21,7 +21,6 @@ class Session {
       $this->username = $_SESSION['username'] = $member->username;
       $this->last_login = $_SESSION['last_login'] = time();
       $this->admin = $_SESSION['admin'] = $member->user_level;
-      echo $this->admin;
     }
     return true;
   }
@@ -43,6 +42,7 @@ class Session {
       $this->member_id = $_SESSION['member_id'];
       $this->username = $_SESSION['username'];
       $this->last_login = $_SESSION['last_login'];
+      $this->admin = $_SESSION['admin'];
     }
   }
 
